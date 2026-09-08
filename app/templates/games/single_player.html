@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Single Player | Number Guessing Game</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/games/game.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/games/single_player.css') }}"
+    >
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <!-- Header -->
+
+        <header class="game-header">
+
+            <div>
+                <span class="game-label">🎯 SINGLE PLAYER</span>
+
+                <h1>Guess the Number</h1>
+
+                <p id="range-text">
+                    Guess the number within the selected range.
+                </p>
+            </div>
+
+            <button
+                id="back-button"
+                class="secondary-button"
+            >
+                ← Back
+            </button>
+
+        </header>
+
+
+        <!-- Game Information -->
+
+        <section class="game-info">
+
+            <div class="info-card">
+                <span class="info-label">Attempts</span>
+                <strong id="attempts">0</strong>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Score</span>
+                <strong id="score">1000</strong>
+            </div>
+
+            <div class="info-card">
+                <span class="info-label">Status</span>
+                <strong id="status">Playing</strong>
+            </div>
+
+        </section>
+
+
+        <!-- Guess Area -->
+
+        <section class="guess-card">
+
+            <h2>Make Your Guess</h2>
+
+            <p id="message">
+                Enter a number and submit your guess.
+            </p>
+
+            <div class="guess-input-area">
+
+                <input
+                    type="number"
+                    id="guess-input"
+                    placeholder="Enter number"
+                    autocomplete="off"
+                >
+
+                <button
+                    id="guess-button"
+                    class="primary-button"
+                >
+                    Guess
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Result -->
+
+        <section
+            id="result-card"
+            class="result-card hidden"
+        >
+
+            <div id="result-icon">🎉</div>
+
+            <h2 id="result-title">
+                You Won!
+            </h2>
+
+            <p id="result-message"></p>
+
+            <div class="result-actions">
+
+                <button
+                    id="rematch-button"
+                    class="primary-button"
+                >
+                    🔄 Rematch
+                </button>
+
+                <button
+                    id="home-button"
+                    class="secondary-button"
+                >
+                    🏠 Home
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/games/single_player.js') }}"
+    ></script>
+
+</body>
+
+</html>

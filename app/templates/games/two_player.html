@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Two Player | Number Guessing Game</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/games/game.css') }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/games/two_player.css') }}"
+    >
+</head>
+
+<body>
+
+    <main class="game-container">
+
+        <header class="game-header">
+
+            <div>
+                <span class="game-label">👥 TWO PLAYER</span>
+
+                <h1>Challenge a Friend</h1>
+
+                <p>
+                    Take turns choosing and guessing the secret number.
+                </p>
+            </div>
+
+            <button
+                id="back-button"
+                class="secondary-button"
+            >
+                ← Back
+            </button>
+
+        </header>
+
+
+        <section class="player-setup-card">
+
+            <h2>Game Setup</h2>
+
+            <p class="setup-description">
+                Enter the details for both players.
+            </p>
+
+
+            <div class="input-group">
+
+                <label for="player1">
+                    Player 1
+                </label>
+
+                <input
+                    type="text"
+                    id="player1"
+                    placeholder="Enter Player 1 name"
+                    maxlength="50"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="player2">
+                    Player 2
+                </label>
+
+                <input
+                    type="text"
+                    id="player2"
+                    placeholder="Enter Player 2 name"
+                    maxlength="50"
+                >
+
+            </div>
+
+
+            <div class="range-row">
+
+                <div class="input-group">
+
+                    <label for="range-min">
+                        Minimum
+                    </label>
+
+                    <input
+                        type="number"
+                        id="range-min"
+                        value="1"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="range-max">
+                        Maximum
+                    </label>
+
+                    <input
+                        type="number"
+                        id="range-max"
+                        value="100"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <p
+                id="setup-message"
+                class="setup-message"
+            ></p>
+
+
+            <button
+                id="start-button"
+                class="primary-button start-button"
+            >
+                Start Game 🎯
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script
+        src="{{ url_for('static', filename='js/games/two_player_choose.js') }}"
+    ></script>
+
+</body>
+
+</html>

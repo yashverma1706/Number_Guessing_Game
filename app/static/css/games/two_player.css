@@ -1,0 +1,108 @@
+/* =========================================
+   TWO PLAYER SETUP
+   ========================================= */
+
+.player-setup-card {
+    width: min(100%, 650px);
+    margin: 0 auto;
+
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.player-setup-card h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.setup-description {
+    color: #6b7280;
+    margin-bottom: 28px;
+}
+
+
+/* Input Groups */
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* Range */
+
+.range-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* Message */
+
+.setup-message {
+    min-height: 22px;
+
+    margin-bottom: 15px;
+
+    color: #dc2626;
+    font-size: 14px;
+}
+
+
+/* Start Button */
+
+.start-button {
+    width: 100%;
+    margin-top: 5px;
+
+    padding: 14px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    .player-setup-card {
+        padding: 25px 18px;
+    }
+
+    .range-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #f5f7fb;
+    --surface: #ffffff;
+    --text: #172033;
+    --muted: #687386;
+    --border: #e3e7ef;
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app-container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 55px 0 30px;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.logo {
+    font-size: 58px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   Game Modes
+========================= */
+
+.game-modes h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.35rem;
+}
+
+.mode-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.mode-card {
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 28px 22px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 32, 51, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.mode-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--primary);
+
+    box-shadow:
+        0 14px 35px rgba(23, 32, 51, 0.12);
+}
+
+.mode-card:active {
+    transform: translateY(-2px);
+}
+
+.mode-icon {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.mode-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.mode-description {
+    color: var(--muted);
+    line-height: 1.5;
+    text-align: center;
+    font-size: 0.92rem;
+}
+
+
+/* =========================
+   Settings
+========================= */
+
+.settings-card {
+    margin-top: 35px;
+
+    padding: 25px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(23, 32, 51, 0.05);
+}
+
+.settings-card h2 {
+    font-size: 1.15rem;
+    margin-bottom: 22px;
+}
+
+.range-settings {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 18px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 150px;
+
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+.range-separator {
+    padding-bottom: 12px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   Quick Links
+========================= */
+
+.quick-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 28px;
+}
+
+.secondary-button {
+    padding: 11px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.secondary-button:hover {
+    border-color: var(--primary);
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+    margin-top: 55px;
+
+    text-align: center;
+
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+footer span {
+    margin: 0 7px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+    .mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-card {
+        min-height: 190px;
+    }
+
+    .range-settings {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .app-container {
+        padding-top: 35px;
+    }
+
+    .range-settings {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    .range-separator {
+        display: none;
+    }
+
+    .quick-links {
+        flex-direction: column;
+    }
+}
